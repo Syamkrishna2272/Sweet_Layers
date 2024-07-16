@@ -70,6 +70,14 @@ flutter:
     - asset/images/Strawberry2_9a51287f-66f7-4618-8a1f-99dd9b4a6c42.webp
     - asset/images/Alphanso-Mango-Cake-jbt.jpg
     - asset/images/cake-hack-tips.jpg
+    - asset/images/breakfast-pastries-2.jpg
+    - asset/images/EgglessDutchTrufflePastry.jpg
+    - asset/images/exps17409_B163857D11_06_4b.jpg
+    - asset/images/flatten.webp
+    - asset/images/french-pastry-recipes.webp
+    - asset/images/how to make these raspberry and cream puff pastries.JPG
+    - asset/images/intro-1697640224.jpg
+    - asset/images/pain-aux-raisins-GettyImages-124761833-57b5975f3df78cd39c5f6f73.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

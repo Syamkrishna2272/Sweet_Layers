@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:sweet_layers/component/menu.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -200,32 +201,73 @@ class _MenuPageState extends State<MenuPage> {
                               ),
                             ],
                           ),
-                          // child: Align(
-                          //   alignment: Alignment.bottomCenter,
-                          //   child: Padding(
-                          //     padding: const EdgeInsets.all(8.0),
-                          //     child: Container(
-                          //       padding: const EdgeInsets.all(15),
-                          //       decoration: const BoxDecoration(
-                          //           color: Color.fromARGB(221, 26, 24, 24),
-                          //           borderRadius: BorderRadius.only(
-                          //               bottomLeft: Radius.circular(10),
-                          //               bottomRight: Radius.circular(10))),
-                          //       child: Text(
-                          //         cakes[index]['text']!,
-                          //         style: const TextStyle(
-                          //           color: Colors.white,
-                          //           fontSize: 16,
-                          //           fontWeight: FontWeight.bold,
-                          //         ),
-                          //         textAlign: TextAlign.center,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                         ),
                       );
                     })),
+            const SizedBox(
+              height: 15,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Menu(
+              image: 'asset/images/breakfast-pastries-2.jpg',
+              text: "Home made Dough",
+              text1: "\$299.00",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Menu(
+              image: 'asset/images/EgglessDutchTrufflePastry.jpg',
+              text: "Choco Cake",
+              text1: "\$199.00",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Menu(
+              image: 'asset/images/exps17409_B163857D11_06_4b.jpg',
+              text: "Cinnamon Fruit Biscuit",
+              text1: "\$299.00",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Menu(
+              image: 'asset/images/flatten.webp',
+              text: "Croissant",
+              text1: "\$99.00",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Menu(
+              image: 'asset/images/french-pastry-recipes.webp',
+              text: "Profiterole",
+              text1: "\$399.00",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Menu(
+              image:
+                  'asset/images/how to make these raspberry and cream puff pastries.JPG',
+              text: "Rasberry Puff",
+              text1: "\$299.00",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Menu(
+              image:
+                  'asset/images/pain-aux-raisins-GettyImages-124761833-57b5975f3df78cd39c5f6f73.jpg',
+              text: "Pain Aux",
+              text1: "\$299.00",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
           ],
         ),
       ),
