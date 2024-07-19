@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class MyButton extends StatelessWidget {
   String text;
   final void Function()? onTap;
@@ -12,24 +13,24 @@ class MyButton extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: 60  ,
-        decoration: BoxDecoration(color: Color.fromARGB(255, 146, 107, 104),
+        decoration: BoxDecoration(color: const Color.fromARGB(255, 146, 107, 104),
         borderRadius: BorderRadius.circular(40 )),
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           
           children: [
             Text(
               text,
-              style: TextStyle( 
+              style: const TextStyle( 
                 fontSize: 20, 
                 fontFamily: "mainfont",
                 color: Colors.white,
                 fontWeight: FontWeight.w100,
               ),
             ),
-            SizedBox(width: 10,),
-            Icon(Icons.arrow_forward,
+            const SizedBox(width: 10,),
+            const Icon(Icons.arrow_forward,
             color: Colors.white,)
           ],
         ),
