@@ -1,55 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sweet_layers/component/menu.dart';
 import 'package:sweet_layers/component/special.dart';
+import 'package:sweet_layers/pages/items_add.dart';
 
-class MenuPage extends StatefulWidget {
+class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
-
-  @override
-  State<MenuPage> createState() => _MenuPageState();
-}
-
-class _MenuPageState extends State<MenuPage> {
-  int _selectedIndex = 0;
-
-  final List<Widget> _screens = [
-    const MenuPageContent(cakes: [
-      {
-        'image': 'asset/images/83221_yummylicious-chocolate-cake.jpeg',
-        'text': "Chocolate"
-      },
-      {
-        'image': 'asset/images/Heart-Shape-Red-velvet-cake.jpg',
-        'text': "Red velvet"
-      },
-      {
-        'image': 'asset/images/mint-chocolate-cake-toujours-online.webp',
-        'text': "Chocolate"
-      },
-      {
-        'image': 'asset/images/sq-choco-vanilla-cake0006chva-AA-1000x1000.jpg',
-        'text': "Choco Vanila"
-      },
-      {
-        'image':
-            'asset/images/Strawberry2_9a51287f-66f7-4618-8a1f-99dd9b4a6c42.webp',
-        'text': "Strawberry"
-      },
-      {
-        'image': 'asset/images/Alphanso-Mango-Cake-jbt.jpg',
-        'text': "Mango Special"
-      },
-      {'image': 'asset/images/cake-hack-tips.jpg', 'text': "Vancho"}
-    ]), // Pass the cakes list here
-    const Center(child: Text('Orders')),
-    const Center(child: Text('Profile')),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,32 +21,33 @@ class _MenuPageState extends State<MenuPage> {
         automaticallyImplyLeading: false,
         backgroundColor: const Color.fromARGB(255, 92, 35, 31),
       ),
-      body: _screens[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_basket),
-            label: 'Orders',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        unselectedItemColor: Colors.grey,
-        backgroundColor: const Color.fromARGB(255, 255, 253, 253),
-        selectedIconTheme: const IconThemeData(size: 30),
-        unselectedIconTheme: const IconThemeData(size: 20),
-        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-        unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
-        onTap: _onItemTapped,
-      ),
+      body: const MenuPageContent(cakes: [
+        {
+          'image': 'asset/images/83221_yummylicious-chocolate-cake.jpeg',
+          'text': "Chocolate"
+        },
+        {
+          'image': 'asset/images/Heart-Shape-Red-velvet-cake.jpg',
+          'text': "Red velvet"
+        },
+        {
+          'image': 'asset/images/mint-chocolate-cake-toujours-online.webp',
+          'text': "Chocolate"
+        },
+        {
+          'image': 'asset/images/sq-choco-vanilla-cake0006chva-AA-1000x1000.jpg',
+          'text': "Choco Vanila"
+        },
+        {
+          'image': 'asset/images/Strawberry2_9a51287f-66f7-4618-8a1f-99dd9b4a6c42.webp',
+          'text': "Strawberry"
+        },
+        {
+          'image': 'asset/images/Alphanso-Mango-Cake-jbt.jpg',
+          'text': "Mango Special"
+        },
+        {'image': 'asset/images/cake-hack-tips.jpg', 'text': "Vancho"}
+      ]),
     );
   }
 }
@@ -115,16 +70,21 @@ class MenuPageContent extends StatelessWidget {
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(25)),
               width: double.infinity,
-              height: 180,
               child: Stack(
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(25),
+                      child: const FadeInImage(
+                        placeholder:
+                            AssetImage('asset/images/placeholder-image.jpg'),
                         image: AssetImage('asset/images/offer cake.jpg'),
                         fit: BoxFit.cover,
+                        fadeInDuration: Duration(milliseconds: 300),
                       ),
-                      borderRadius: BorderRadius.circular(25),
                     ),
                   ),
                   const Padding(
@@ -170,6 +130,7 @@ class MenuPageContent extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
+                hintText: "Search here....",
                 border: OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(20),
@@ -182,6 +143,15 @@ class MenuPageContent extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 15),
+          Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
+                    return  const OrderPage();
+                  }));
+                },
+                child: const Text("Add")),
+          ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
@@ -206,53 +176,9 @@ class MenuPageContent extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 15), 
-          const Menu(
-            image: 'asset/images/breakfast-pastries-2.jpg',
-            text: "Home made Dough",
-            text1: "\$299.00",
-          ),
-          const SizedBox(height: 15),
-          const Menu(
-            image: 'asset/images/EgglessDutchTrufflePastry.jpg',
-            text: "Choco Cake",
-            text1: "\$199.00",
-          ),
-          const SizedBox(height: 15),
-          const Menu(
-            image: 'asset/images/exps17409_B163857D11_06_4b.jpg',
-            text: "Cinnamon Fruit Biscuit",
-            text1: "\$299.00",
-          ),
-          const SizedBox(height: 15),
-          const Menu(
-            image: 'asset/images/flatten.webp',
-            text: "Croissant",
-            text1: "\$99.00",
-          ),
-          const SizedBox(height: 15),
-          const Menu(
-            image: 'asset/images/french-pastry-recipes.webp',
-            text: "Profiterole",
-            text1: "\$399.00",
-          ),
-          const SizedBox(height: 15),
-          const Menu(
-            image:
-                'asset/images/how to make these raspberry and cream puff pastries.JPG',
-            text: "Rasberry Puff",
-            text1: "\$299.00",
-          ),
-          const SizedBox(height: 15),
-          const Menu(
-            image:
-                'asset/images/pain-aux-raisins-GettyImages-124761833-57b5975f3df78cd39c5f6f73.jpg',
-            text: "Pain Aux",
-            text1: "\$299.00",
-          ),
-          const SizedBox(height: 15),
         ],
       ),
     );
   }
 }
+

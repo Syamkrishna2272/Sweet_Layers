@@ -55,7 +55,6 @@ class _Special_widgetState extends State<Special_widget> {
                               _isfavourite[index] = !_isfavourite[index];
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                               
                                   backgroundColor: _isfavourite[index]
                                       ? Colors.green
                                       : Colors.red,
@@ -64,7 +63,7 @@ class _Special_widgetState extends State<Special_widget> {
                                         ? 'Added to Favorite'
                                         : 'Removed from Favorite',
                                   ),
-                                  duration: Duration(seconds: 1),
+                                  duration: const Duration(seconds: 1),
                                 ),
                               );
                             });

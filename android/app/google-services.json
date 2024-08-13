@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "314905412054",
+    "project_id": "sweetlayers-fa327",
+    "storage_bucket": "sweetlayers-fa327.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314905412054:android:86797df21610aca245e477",
+        "android_client_info": {
+          "package_name": "com.example.sweet_layers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkkqPflP_hKxrpKNfHqt2DrN03fmriFuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

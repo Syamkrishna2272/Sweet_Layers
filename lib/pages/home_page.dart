@@ -14,17 +14,17 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly ,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
               height: screenSize.height * 0.05,
             ),
 
             // Shop name
-          const Text(
+            const Text(
               "Sweet Layers",
-              style: TextStyle( 
-                fontSize: 33, 
+              style: TextStyle(
+                fontSize: 33,
                 fontFamily: "mainfont",
                 color: Color.fromARGB(255, 92, 35, 31),
                 fontWeight: FontWeight.w300,
@@ -37,20 +37,28 @@ class HomeScreen extends StatelessWidget {
             //image
             Container(
               decoration: BoxDecoration(
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color.fromARGB(255, 92, 35, 31),
-                      offset: Offset(0, 4),
-                      blurRadius: 20,
-                    ),
-                  ],
-                  borderRadius: BorderRadius.circular(25),
-                  image: const DecorationImage(
-                      image: AssetImage('asset/images/home cake.jpg'),
-                      fit: BoxFit.cover)),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 92, 35, 31),
+                    offset: Offset(0, 4),
+                    blurRadius: 20,
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(25),
+              ),
               height: screenSize.height * 0.4,
               width: screenSize.width * 0.8,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: const FadeInImage(
+                  placeholder: AssetImage('asset/images/placeholder-image.jpg'),
+                  image: AssetImage('asset/images/home cake.jpg'),
+                  fit: BoxFit.cover,
+                  fadeInDuration: Duration(milliseconds: 300),
+                ),
+              ),
             ),
+
             SizedBox(
               height: screenSize.height * 0.03,
             ),
@@ -66,15 +74,17 @@ class HomeScreen extends StatelessWidget {
                 fontFamily: "mainfont",
                 color: Color.fromARGB(255, 92, 35, 31),
                 fontWeight: FontWeight.w400,
-              ), 
+              ),
             ),
-            MyButton(text: "Get Start",
-            onTap: () {Navigator.pushNamed(context, '/menupage');
-              
-            },)
-          ], 
+            MyButton(
+              text: "Get Start",
+              onTap: () {
+                Navigator.pushNamed(context, '/menupage');
+              },
+            )
+          ],
         ),
-      ), 
-    ); 
+      ),
+    );
   }
 }
